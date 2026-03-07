@@ -15,7 +15,7 @@ const AudioPlayer = ({ isPlaying, setIsPlaying }) => {
 
     return (
         <>
-            <audio ref={audioRef} loop src="/music.mp3" preload="auto" />
+            <audio ref={audioRef} loop src={`${import.meta.env.BASE_URL}music.mp3`} preload="auto" />
 
             <motion.button
                 initial={{ opacity: 0, scale: 0.8 }}

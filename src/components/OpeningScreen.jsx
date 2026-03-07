@@ -7,8 +7,10 @@ const OpeningScreen = ({ onOpen }) => {
     const location = useLocation();
 
     // Extract the 'to' parameter from the URL query string
-    const queryParams = new URLSearchParams(location.search);
-    const recipient = queryParams.get('to');
+    // With HashRouter, params might be before the hash (window.location.search) or after (location.search)
+    const urlParams = new URLSearchParams(window.location.search);
+    const hashParams = new URLSearchParams(location.search);
+    const recipient = hashParams.get('to') || urlParams.get('to');
 
     const handleOpen = () => {
         onOpen();
