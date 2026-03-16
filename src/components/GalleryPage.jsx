@@ -129,6 +129,7 @@ const GalleryPage = () => {
                             minHeight: '100vh', // Forces image to span entire height
                             height: '100%',
                             objectFit: 'cover', // Crops perfectly to viewport size so no second image is visible
+                            objectPosition: 'center', // Explicitly anchor cropping to the center
                             display: 'block',
                         }}
                     />
