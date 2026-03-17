@@ -72,7 +72,7 @@ const OpeningScreen = ({ onOpen }) => {
                     style={{
                         marginBottom: '2rem',
                         fontSize: '2.5rem',
-                        color: '#3A3A3A',
+                        color: '#597c58',
                         letterSpacing: '2px'
                     }}
                 >
@@ -89,7 +89,7 @@ const OpeningScreen = ({ onOpen }) => {
                     style={{
                         padding: '14px 36px',
                         border: 'none',
-                        backgroundColor: '#B8A47E',
+                        backgroundColor: '#ba8c8c',
                         color: 'white',
                         fontSize: '1rem',
                         letterSpacing: '1px',
