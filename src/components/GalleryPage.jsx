@@ -85,14 +85,14 @@ const GalleryPage = () => {
                             style={{
                                 width: '40px',
                                 height: '40px',
-                                border: '3px solid rgba(184, 164, 126, 0.3)',
-                                borderTop: '3px solid #b8a47e',
+                                border: '3px solid rgba(186, 140, 140, 0.3)',
+                                borderTop: '3px solid #ba8c8c',
                                 borderRadius: '50%',
                                 marginBottom: '16px',
                             }}
                         />
                         <div style={{
-                            color: '#b8a47e',
+                            color: '#ba8c8c',
                             fontFamily: 'serif',
                             fontSize: '1.2rem',
                             letterSpacing: '2px',

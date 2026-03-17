@@ -29,7 +29,7 @@ const AudioPlayer = ({ isPlaying, setIsPlaying }) => {
                     bottom: '20px',
                     left: '20px',
                     zIndex: 1000,
-                    background: 'rgba(184, 164, 126, 0.8)',
+                    background: 'rgba(186, 140, 140, 0.8)',
                     backdropFilter: 'blur(5px)',
                     border: '1px solid rgba(255, 255, 255, 0.3)',
                     borderRadius: '50%',

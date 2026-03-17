@@ -96,7 +96,7 @@ const OpeningScreen = ({ onOpen }) => {
                         textTransform: 'uppercase',
                         cursor: 'pointer',
                         borderRadius: '30px',
-                        boxShadow: '0 4px 15px rgba(184, 164, 126, 0.4)',
+                        boxShadow: '0 4px 15px rgba(89, 124, 88, 0.4)',
                         transition: 'box-shadow 0.3s ease',
                     }}
                 >
