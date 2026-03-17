@@ -56,7 +56,7 @@ const OpeningScreen = ({ onOpen }) => {
                         style={{
                             marginBottom: '1rem',
                             fontSize: '2rem',
-                            color: '#555555',
+                            color: '#597c58',
                             fontFamily: "'Alex Brush', cursive"
                         }}
                     >
