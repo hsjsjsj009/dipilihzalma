@@ -104,12 +104,8 @@ const GalleryPage = () => {
             </AnimatePresence>
 
             {!isLoading && images.map((src, index) => (
-                <motion.div
+                <div
                     key={index}
-                    initial={{ opacity: 0.3 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 1, ease: "easeInOut" }}
                     style={{
                         width: '100%',
                         maxWidth: '600px', // Restrain ultimate width on very wide screens for better reading experience
@@ -129,7 +125,7 @@ const GalleryPage = () => {
                             display: 'block',
                         }}
                     />
-                </motion.div>
+                </div>
             ))}
         </div>
     );
