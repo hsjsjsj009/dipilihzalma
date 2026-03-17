@@ -50,7 +50,7 @@ const GalleryPage = () => {
 
     return (
         <div style={{
-            width: '100vw',
+            width: '100%',
             minHeight: '100vh',
             backgroundColor: '#FAF8F5',
             display: 'flex',
@@ -113,7 +113,6 @@ const GalleryPage = () => {
                     style={{
                         width: '100%',
                         maxWidth: '600px', // Restrain ultimate width on very wide screens for better reading experience
-                        minHeight: '100vh', // Ensure minimum height so next section doesn't bleed into view initially
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
@@ -126,10 +125,7 @@ const GalleryPage = () => {
                         alt={`Invitation Page ${index + 1}`}
                         style={{
                             width: '100%',
-                            minHeight: '100vh', // Forces image to span entire height
-                            height: '100%',
-                            objectFit: 'cover', // Crops perfectly to viewport size so no second image is visible
-                            objectPosition: 'center', // Explicitly anchor cropping to the center
+                            height: 'auto',
                             display: 'block',
                         }}
                     />
