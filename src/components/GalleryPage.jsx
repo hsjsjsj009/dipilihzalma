@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { preloadImageAsBlob } from '../utils/imageLoader';
 
 const GalleryPage = () => {
     const [images, setImages] = useState([]);
@@ -14,12 +15,9 @@ const GalleryPage = () => {
                 // Array of paths resolving correctly against the base URL
                 const imagePaths = Array.from({ length: 8 }, (_, i) => `${basePath}images/${i + 1}.webp`);
 
-                // Fetch all images in parallel and convert to Blobs
+                // Fetch all images through the shared Blob cache
                 const fetchPromises = imagePaths.map(async (path) => {
-                    const response = await fetch(path);
-                    if (!response.ok) throw new Error(`Failed to load ${path}`);
-                    const blob = await response.blob();
-                    return URL.createObjectURL(blob);
+                    return await preloadImageAsBlob(path);
                 });
 
                 const loadedImages = await Promise.all(fetchPromises);
@@ -27,7 +25,7 @@ const GalleryPage = () => {
                 setIsLoading(false);
             } catch (error) {
                 console.error("Error preloading images:", error);
-                // Fallback to direct paths if fetch fails, giving the browser a chance to handle it gracefully
+                // Fallback to direct paths
                 const fallbackPaths = Array.from({ length: 8 }, (_, i) => `${import.meta.env.BASE_URL}images/${i + 1}.webp`);
                 setImages(fallbackPaths);
                 setIsLoading(false);
@@ -35,15 +33,6 @@ const GalleryPage = () => {
         };
 
         preloadImages();
-
-        // Cleanup object URLs on unmount
-        return () => {
-            images.forEach(url => {
-                if (url.startsWith('blob:')) {
-                    URL.revokeObjectURL(url);
-                }
-            });
-        };
         // Intentionally omitting 'images' dependency to run only once on mount
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
